@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RageBaiting — The Opposite Website</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="site-body">
+
+  <!-- Ambient Glows -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- TOP GRADUATION INVERTER BANNER (Shows at half the screen with Invert FX) -->
+  <aside class="graduation-inverter-bar" id="graduation-bar">
+    <div class="inverter-half normal-half">
+      <span class="grad-tag"><i class="fa-solid fa-graduation-cap"></i> GRADUATING STATEMENT</span>
+      <p id="grad-statement-text" class="grad-quote">"You are officially enrolled in the prestigious Academy of Digital Sufferers."</p>
+    </div>
+    <div class="inverter-half inverted-half">
+      <span class="grad-tag inverted-tag"><i class="fa-solid fa-repeat"></i> INVERTED TRUTH</span>
+      <p id="inverted-statement-text" class="grad-quote-inv">"TRANSLATION: You have zero patience and this website knows it."</p>
+    </div>
+    <button id="toggle-full-invert-btn" class="inverter-ctrl-btn" title="Toggle Half-Screen Reality Inverter">
+      <i class="fa-solid fa-circle-half-stroke"></i>
+      <span id="invert-btn-label">Invert Screen: OFF</span>
+    </button>
+  </aside>
+
+  <!-- Top Floating Controls (Sound & Restart) -->
+  <div class="floating-controls">
+    <button id="global-sound-toggle" class="ctrl-pill sound-pill" title="Toggle Sound">
+      <i class="fa-solid fa-volume-high" id="sound-icon"></i>
+      <span id="sound-label">Sound: ON</span>
+    </button>
+  </div>
+
+  <!-- ==================== 1. LOGIN PAGE — RAGE VEHICLE TEST DRIVE ==================== -->
+  <main id="login-view" class="view-section active">
+    <div class="vehicle-login-card glassmorphism">
+      
+      <!-- Brand Header with Rage Vehicle Motif -->
+      <div class="brand-header">
+        <div class="vehicle-badge">
+          <i class="fa-solid fa-gauge-simple-high"></i>
+          <span>RAGE VEHICLE — DRIVER ADMISSION TEST</span>
+        </div>
+        <h1 class="brand-title">Rage<span>Baiting</span></h1>
+        <p class="brand-tagline">Floor the gas to 99 MPH. Don't worry, the engine stalls for everyone.</p>
+      </div>
+
+      <!-- Attempt Telemetry Tracker -->
+      <div class="attempt-telemetry">
+        <div class="attempt-indicators">
+          <div class="gauge-pill" id="pill-1"><i class="fa-solid fa-car-side"></i> Lap 1: Pending</div>
+          <div class="gauge-pill" id="pill-2"><i class="fa-solid fa-car-side"></i> Lap 2: Locked</div>
+          <div class="gauge-pill" id="pill-3"><i class="fa-solid fa-car-side"></i> Lap 3: Final</div>
+        </div>
+        <p class="telemetry-hint" id="attempt-status-text">Vehicle ignition test: 3 attempts strictly mandatory.</p>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form" class="vehicle-form" onsubmit="return false;">
+        <div class="form-row">
+          <label for="username">Pilot / Driver Name</label>
+          <div class="input-box">
+            <i class="fa-solid fa-id-card"></i>
+            <input type="text" id="username" placeholder="e.g. SpeedDemon99" required autocomplete="off" value="SpeedRacer">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="password">Vehicle Ignition Code</label>
+          <div class="input-box">
+            <i class="fa-solid fa-key"></i>
+            <input type="password" id="password" placeholder="••••••••••••" required value="revTheEngine123">
+          </div>
+        </div>
+
+        <button type="submit" id="login-submit-btn" class="btn btn-gas-pedal">
+          <i class="fa-solid fa-gas-pump"></i>
+          <span class="btn-text">ACCELERATE TO LOGIN</span>
+          <i class="fa-solid fa-angles-right"></i>
+        </button>
+      </form>
+
+      <!-- Simulated Loading Overlay (Fast 1% to 99% + 4-Second Freeze) -->
+      <div id="login-loading-overlay" class="loading-overlay hidden">
+        <div class="engine-hud">
+          <div class="speedo-dial">
+            <span class="speedo-val" id="login-progress-percent">1%</span>
+            <span class="speedo-unit">MPH / PROGRESS</span>
+          </div>
+
+          <h3 id="loading-status-text">Revving engine: 1% &rarr; 99%...</h3>
+          
+          <div class="fuel-track">
+            <div id="login-progress-bar" class="fuel-bar-fill" style="width: 1%;"></div>
+          </div>
+
+          <p class="fuel-subtext" id="progress-step-msg">Shifting into overdrive...</p>
+
+          <!-- 4-Second 99% Engine Stall Error -->
+          <div id="login-error-msg" class="stall-warning-banner hidden">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <div>
+              <strong>Shit! Something went wrong.</strong>
+              <p>Engine stalled at 99%. Please log in again.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== ACHIEVEMENT MODAL (AFTER 3RD ATTEMPT) ==================== -->
+  <div id="achievement-modal" class="modal-layer hidden">
+    <div class="modal-box achievement-box">
+      <div class="celebrate-avatar">🎓</div>
+      <h2 class="modal-title">CONGRATULATIONS! 🎉</h2>
+      <p class="modal-bold-lead">"You logged in THREE TIMES just to open this basic website."</p>
+      
+      <div class="punchline-card">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>"Your productivity has officially left the chat."</p>
+        <i class="fa-solid fa-quote-right"></i>
+      </div>
+
+      <div class="achievement-diploma-preview">
+        <span class="diploma-seal"><i class="fa-solid fa-award"></i></span>
+        <div>
+          <h4>Certified Impatience Degree</h4>
+          <p>Conferred for enduring 3 scripted verification stalls.</p>
+        </div>
+      </div>
+
+      <button id="achievement-continue-btn" class="btn btn-primary btn-large">
+        <span>Proceed to Reverse Popups</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== 2. WELCOME POPUP RAGEBAIT (THE OPPOSITE FUNCTION) ==================== -->
+  <div id="welcome-popups-layer" class="modal-layer hidden">
+    <div id="welcome-popup-box" class="modal-box reverse-popup-box">
+      
+      <div class="popup-header-row">
+        <div class="popup-badge-counter" id="popup-counter-text">
+          <i class="fa-solid fa-bell"></i> Welcome Popup: 1/55
+        </div>
+        <span class="reverse-rule-indicator">
+          <i class="fa-solid fa-shuffle"></i> OPPOSITE RULES ACTIVE
+        </span>
+      </div>
+
+      <div class="popup-main-content">
+        <div class="popup-icon-burst">🎊</div>
+        <h2 class="popup-headline">WELCOME, USER! 🎊</h2>
+        <p class="popup-greeting">"We are very happy that you logged in. Again."</p>
+        
+        <div class="popup-bar-track">
+          <div id="popup-progress-fill" class="popup-bar-fill" style="width: 1.8%;"></div>
+        </div>
+
+        <p class="popup-snarky-hint" id="popup-snark-text">Tip: Clicking on the popup card or "KEEP POPUP" actually closes it!</p>
+      </div>
+
+      <!-- ONLY TWO BUTTONS WITH THE OPPOSITE FUNCTION -->
+      <div class="reverse-actions-grid">
+        <!-- KEEP POPUP: Actually CLOSES/Advances the popup! -->
+        <button id="popup-keep-btn" class="btn btn-keep-opposite">
+          <i class="fa-solid fa-face-smile"></i>
+          <span>KEEP POPUP 😊</span>
+        </button>
+
+        <!-- CLOSE POPUP: Refuses to close, taunts, or keeps it! -->
+        <button id="popup-close-btn" class="btn btn-close-opposite">
+          <i class="fa-solid fa-xmark"></i>
+          <span>CLOSE POPUP ❌</span>
+        </button>
+      </div>
+
+      <p class="click-card-notice"><i class="fa-solid fa-hand-pointer"></i> (You can also click anywhere on this popup card to dismiss it!)</p>
+    </div>
+  </div>
+
+  <!-- ==================== 3. PROFILE PAGE & FAKE LAPTOP WINDOW ==================== -->
+  <main id="profile-view" class="view-section hidden">
+    <div class="profile-layout">
+      
+      <!-- Top Bar -->
+      <div class="profile-nav glassmorphism">
+        <div class="nav-brand-title">
+          <i class="fa-solid fa-car-tunnel"></i>
+          <span>RageBaiting OS <span>v99.0-OPPOSITE</span></span>
+        </div>
+        <button id="nav-restart-btn" class="btn btn-restart-sm">
+          <i class="fa-solid fa-rotate-left"></i> Reset Everything
+        </button>
+      </div>
+
+      <!-- FAKE LAPTOP APPLICATION WINDOW -->
+      <div id="fake-laptop-window" class="fake-laptop-window glassmorphism">
+        
+        <!-- OS Titlebar -->
+        <div class="laptop-titlebar">
+          <div class="os-window-name">
+            <i class="fa-solid fa-laptop-code"></i>
+            <span>RageBait_Vehicle_Terminal_Final_v3.exe</span>
+          </div>
+          <!-- Fake Laptop Controls -->
+          <div class="laptop-controls">
+            <button id="win-btn-minimize" class="lap-btn lap-min" title="Minimize">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <button id="win-btn-maximize" class="lap-btn lap-max" title="Maximize">
+              <i class="fa-regular fa-square"></i>
+            </button>
+            <button id="win-btn-close" class="lap-btn lap-close" title="Close">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Window Inner Content -->
+        <div class="laptop-body">
+          
+          <!-- User Profile Hero -->
+          <div class="user-strip">
+            <div class="driver-avatar">
+              <i class="fa-solid fa-user-ninja"></i>
+              <span class="driver-dot"></span>
+            </div>
+            <div class="driver-details">
+              <div class="badge-row">
+                <span class="badge green">55 Popups Survived</span>
+                <span class="badge purple">Rage Vehicle Certified</span>
+              </div>
+              <h2 class="driver-name">Welcome, <span id="display-username" class="neon-name">SpeedRacer</span>!</h2>
+              <p class="driver-motto">"You conquered the 3 logins and figured out the opposite buttons."</p>
+            </div>
+          </div>
+
+          <!-- 🎓 DIPLOMA / GRADUATING STATEMENT SHOWCASE (Half-Split Design) -->
+          <div class="graduation-diploma-card">
+            <div class="diploma-header">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <h3>OFFICIAL GRADUATION HONORS DIPLOMA</h3>
+              <span class="diploma-stamp">SUMMA CUM RAGE</span>
+            </div>
+            <div class="diploma-content">
+              <p class="diploma-main-statement" id="diploma-statement">
+                "Be it known that <strong><span class="diploma-user">User</span></strong> has officially graduated with Honors from the School of Endless Delays. You voluntarily clicked backwards buttons and waited for 4-second stalls just to read this text."
+              </p>
+              <div class="diploma-signatures">
+                <div class="sig-block">
+                  <span class="sig-line">Dr. I.M. Annoying</span>
+                  <span class="sig-title">Dean of Frustration</span>
+                </div>
+                <div class="sig-block">
+                  <span class="sig-line">Opposite Day Bot</span>
+                  <span class="sig-title">Minister of Reverse Clicks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== 4. 250 YEARS LIFETIME SECTION ==================== -->
+          <div class="lifetime-diagnostic-box">
+            <div class="diag-header-center">
+              <span class="diag-pill"><i class="fa-solid fa-stopwatch"></i> QUANTUM LIFE EXPECTANCY</span>
+              <h2 class="diag-title">YOUR WEBSITE LIFE EXPECTANCY 🤡</h2>
+              
+              <div class="diag-giant-counter" id="lifetime-counter-number">250 YEARS</div>
+              <h4 class="diag-subtitle">Estimated lifetime on this website.</h4>
+              <p class="diag-funny-text">"Even though you have done absolutely nothing here."</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="diag-grid">
+              <div class="diag-item">
+                <span class="d-label"><i class="fa-regular fa-clock"></i> Time spent doing nothing</span>
+                <span class="d-val text-cyan">250 years</span>
+              </div>
+              <div class="diag-item">
+                <span class="d-label"><i class="fa-solid fa-chart-pie"></i> Productivity</span>
+                <span class="d-val text-pink">0.0001%</span>
+              </div>
+              <div class="diag-item">
+                <span class="d-label"><i class="fa-solid fa-key"></i> Login attempts</span>
+                <span class="d-val text-yellow">3</span>
+              </div>
+              <div class="diag-item">
+                <span class="d-label"><i class="fa-regular fa-calendar-xmark"></i> Your future plans</span>
+                <span class="d-val text-red">Cancelled</span>
+              </div>
+              <div class="diag-item full-width">
+                <span class="d-label"><i class="fa-solid fa-infinity"></i> Website commitment</span>
+                <span class="d-val text-purple">Forever</span>
+              </div>
+            </div>
+
+            <!-- Section 5: Close Website Prank Button -->
+            <div class="close-prank-cta-wrap">
+              <button id="close-website-prank-btn" class="btn btn-close-site-hero">
+                <i class="fa-solid fa-power-off"></i>
+                <span>CLOSE THIS WEBSITE</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Shrunk Window State (When Maximize is clicked) -->
+        <div id="tiny-window-overlay" class="tiny-window-overlay hidden">
+          <div class="tiny-box">
+            <i class="fa-solid fa-compress fa-beat"></i>
+            <p><strong>Maximum disappointment achieved.</strong></p>
+            <button id="restore-tiny-win-btn" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-expand"></i> Restore Window
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== 5. CLOSE WEBSITE PRANK MODAL (BOSS ALERT) ==================== -->
+  <div id="close-prank-modal" class="modal-layer hidden">
+    <div class="modal-box prank-modal-box">
+      <div class="boss-alert-badge">
+        <i class="fa-solid fa-user-tie"></i> CODE RED: BOSS SURVEILLANCE DETECTED
+      </div>
+      
+      <div class="boss-mascot-row">
+        <span class="boss-emoji">👔</span>
+        <span class="boss-emoji-sub">👀</span>
+        <span class="boss-emoji">💼</span>
+      </div>
+
+      <h2 class="modal-title">WAIT! IS YOUR BOSS BEHIND YOU?! 👔👀</h2>
+      
+      <div class="prank-quote-bubble">
+        <p class="prank-p1">"Are you trying to close this website because your manager is walking past your desk?! 🏃‍♂️💨"</p>
+        <p class="prank-p2">"Don't panic! Minimizing won't hide the 250 years of zero productivity. What is your immediate excuse?"</p>
+      </div>
+
+      <!-- The Opposite Options for Leaving -->
+      <div class="prank-btn-pair">
+        <!-- Clicking "OK, KEEP ME ON THIS WEBSITE" actually LEAVES the website! -->
+        <button id="prank-stay-btn" class="btn btn-stay-choice">
+          <i class="fa-solid fa-face-flushed"></i>
+          <span>OK, KEEP ME ON THIS WEBSITE 😭</span>
+        </button>
+
+        <!-- Clicking "I'M LEAVING ANYWAY" refuses to let you leave and adds overtime! -->
+        <button id="prank-leave-btn" class="btn btn-leave-choice">
+          <i class="fa-solid fa-person-running"></i>
+          <span>I'M LEAVING ANYWAY 🏃‍♂️</span>
+        </button>
+      </div>
+      
+      <p class="boss-footnote">⚠️ Warning: Clicking "KEEP ME" activates opposite escape protocol.</p>
+    </div>
+  </div>
+
+  <!-- ==================== ESCAPE / VICTORY MODAL ("I WILL GRAB YOU AGAIN") ==================== -->
+  <div id="escape-screen-modal" class="modal-layer hidden">
+    <div class="modal-box escape-modal-box">
+      <div class="grab-hero-icons">
+        <span class="grab-icon">🪝</span>
+        <span class="grab-icon-boss">👔</span>
+        <span class="grab-icon">😈</span>
+      </div>
+      <h2 class="modal-title">YOU ARE LEAVING... BUT I WILL GRAB YOU AGAIN! 🪝😈</h2>
+      
+      <div class="boss-escape-statement">
+        <p class="escape-lead">"You thought you could sneak out just because your boss walked away? Cute."</p>
+        <p class="escape-sub">"You slipped through the opposite buttons this time, but the RageBait hook is already planted. We will see you on Monday morning."</p>
+      </div>
+
+      <div class="escape-summary-stats">
+        <div class="esc-box">
+          <span class="esc-value">👔 100%</span>
+          <span class="esc-name">Boss Dodged</span>
+        </div>
+        <div class="esc-box">
+          <span class="esc-value">🪝 PENDING</span>
+          <span class="esc-name">Next Grab</span>
+        </div>
+        <div class="esc-box">
+          <span class="esc-value">0.00%</span>
+          <span class="esc-name">Work Done</span>
+        </div>
+      </div>
+
+      <button id="escape-restart-btn" class="btn btn-primary btn-large">
+        <i class="fa-solid fa-arrow-rotate-right"></i>
+        <span>Let Me Grab You Again (Restart)</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

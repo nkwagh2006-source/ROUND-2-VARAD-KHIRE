@@ -1,0 +1,337 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>RageBaiting — Complete Master Prompts & Specification Document</title>
+<style>
+  body {
+    font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #111827;
+    margin: 36pt;
+  }
+  h1 {
+    font-size: 24pt;
+    color: #4f46e5;
+    border-bottom: 2pt solid #4f46e5;
+    padding-bottom: 6pt;
+    margin-top: 18pt;
+    margin-bottom: 12pt;
+  }
+  h2 {
+    font-size: 16pt;
+    color: #1e293b;
+    border-bottom: 1pt solid #cbd5e1;
+    padding-bottom: 4pt;
+    margin-top: 18pt;
+    margin-bottom: 8pt;
+  }
+  h3 {
+    font-size: 13pt;
+    color: #4338ca;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+  }
+  p, li {
+    font-size: 11pt;
+    margin-bottom: 6pt;
+  }
+  .callout {
+    background-color: #f1f5f9;
+    border-left: 4pt solid #6366f1;
+    padding: 10pt 14pt;
+    margin: 12pt 0;
+  }
+  .warning-callout {
+    background-color: #fef2f2;
+    border-left: 4pt solid #ef4444;
+    padding: 10pt 14pt;
+    margin: 12pt 0;
+  }
+  .prompt-box {
+    background-color: #f8fafc;
+    border: 1pt dashed #94a3b8;
+    padding: 12pt 16pt;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 10pt;
+    margin: 12pt 0;
+    white-space: pre-wrap;
+    line-height: 1.4;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12pt 0;
+  }
+  th, td {
+    border: 1pt solid #cbd5e1;
+    padding: 8pt 10pt;
+    text-align: left;
+    font-size: 10pt;
+  }
+  th {
+    background-color: #e2e8f0;
+    font-weight: bold;
+    color: #0f172a;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2pt 6pt;
+    border-radius: 4pt;
+    font-size: 9pt;
+    font-weight: bold;
+    background-color: #e0e7ff;
+    color: #3730a3;
+  }
+</style>
+</head>
+<body>
+
+<h1>RageBaiting — Master Prompts & Complete Specification Document</h1>
+
+<div class="callout">
+  <strong>Document Summary:</strong> This document contains the complete collection of prompts, architectural specifications, design constraints, and reverse-psychology logic used to design, build, and refine the <strong>RageBaiting</strong> interactive website.
+</div>
+
+<hr/>
+
+<h2>1. Overview of the Application</h2>
+<p><strong>RageBaiting</strong> is a responsive, funny digital endurance experience built using pure vanilla HTML5, CSS3, and JavaScript. It incorporates reverse psychology, humorous micro-interactions, fake operating system controls, and synthesizer-driven audio feedback to entertain users through deliberate digital frustration.</p>
+
+<table>
+  <tr>
+    <th>Core Milestone</th>
+    <th>Mechanism</th>
+    <th>User Psychological Impact</th>
+  </tr>
+  <tr>
+    <td><strong>Rage Vehicle Admission</strong></td>
+    <td>3 Mandatory simulated login attempts with 1% &rarr; 99% throttle and a 4-second engine freeze.</td>
+    <td>Builds anticipation before intentionally failing twice and rewarding persistence.</td>
+  </tr>
+  <tr>
+    <td><strong>Achievement Modal</strong></td>
+    <td>Triple Auth Survivor diploma conferred upon completing the 3rd attempt.</td>
+    <td>Validates the ridiculousness of logging in 3 times for a basic website.</td>
+  </tr>
+  <tr>
+    <td><strong>Reverse Popups (1-55)</strong></td>
+    <td>Only "KEEP POPUP" and "CLOSE POPUP" buttons. Reverse psychology: clicking Keep closes it; clicking Close refuses to close.</td>
+    <td>Pure comedic subversion of typical UI conventions.</td>
+  </tr>
+  <tr>
+    <td><strong>Graduation & Inverter</strong></td>
+    <td>Half-screen dual graduation quotes with full-screen color and reality inversion mode.</td>
+    <td>Satirizes user accomplishments and flips normal meanings into harsh comedic truths.</td>
+  </tr>
+  <tr>
+    <td><strong>Fake Laptop Controls</strong></td>
+    <td>In-browser desktop window with Minimize ("Can't minimize problems"), Maximize (shrinks tiny), and Close ("Premium feature").</td>
+    <td>Subverts expected operating system control behavior.</td>
+  </tr>
+  <tr>
+    <td><strong>250 Years Diagnostic</strong></td>
+    <td>Quantum lifetime calculation citing 250 years wasted and 0.0001% productivity.</td>
+    <td>Highlights the deliberate pointlessness of digital time-wasting.</td>
+  </tr>
+  <tr>
+    <td><strong>Boss Surveillance Exit</strong></td>
+    <td>"Wait! Is your boss behind you?!" with reverse exit logic and the "I will grab you again" hook.</td>
+    <td>Workplace parody that traps the user if they try to leave, and exits if they ask to stay.</td>
+  </tr>
+</table>
+
+<hr/>
+
+<h2>2. Prompt 1 — Original Full Specification Prompt</h2>
+<p>Below is the complete, unabridged original prompt provided for the foundation of the project:</p>
+
+<div class="prompt-box">
+# Build RageBaiting — Complete Working Website
+
+Build a complete, responsive, funny ragebait website called RageBaiting using HTML, CSS, and JavaScript.
+
+Prioritize working functionality, a polished interface, and a complete user flow. Keep the project simple with three main files:
+- index.html
+- style.css
+- script.js
+
+Do not use React, complex frameworks, backend servers, or paid APIs. The website must work by opening index.html in a browser.
+
+## 1. Login Page — Three Login Attempts
+Create a modern, attractive login page with:
+- Username field
+- Password field
+- Login button
+- Dark modern background
+- Funny RageBaiting branding
+- Responsive layout
+
+### Login functionality
+1. The user enters their username and password.
+2. Clicking Login starts a loading animation.
+3. Display a progress bar that quickly moves from 1% to 99%.
+4. At 99%, pause for 4 seconds.
+5. Show this error: "Shit! Something went wrong. Please log in again."
+6. Return to the login page and require another login attempt.
+7. Repeat until the user submits the login form three times.
+
+After the third login, show an achievement popup:
+"CONGRATULATIONS! 🎉"
+"You logged in THREE TIMES just to open this basic website."
+"Your productivity has officially left the chat."
+Add a working Continue button.
+
+## 2. Welcome Popup Ragebait — 55 Popups
+After the third login, show a welcome popup repeatedly, one after another, until 55 popups have appeared.
+
+### Popup content
+"WELCOME, USER! 🎊"
+"We are very happy that you logged in. Again."
+Display a counter: "Welcome Popup: 17/55"
+The number must update correctly for every popup.
+
+### Continuous popup behavior
+- Automatically display the next popup after the current popup is dismissed.
+- Do not display all 55 popups simultaneously.
+- Keep the same popup design but change the counter.
+- Add a short animation whenever the next popup appears.
+- Play a short "ting ting" sound when each popup appears.
+- Include a working mute/unmute button.
+- Sound should work after the user's first interaction with the website.
+
+### Popup buttons
+- KEEP IT 😊: Close current popup, show next popup. After 55, open profile page.
+- CLOSE IT ❌: Confirmation: "Are you sure you want to close happiness?"
+- SKIP 55 POPUPS ⏭️: Stop popup sequence immediately and proceed directly to profile.
+
+## 3. Profile Page and Fake Laptop Controls
+Include:
+- Username entered on the login page
+- Profile avatar & Welcome message
+- Fake laptop application window
+- Website lifetime calculator
+- Rage Level indicator & Restart button
+
+Three fake laptop controls at top-right:
+- Minimize: "You wanted to minimize your problems?" (keep window visible).
+- Maximize: Shrink fake window to tiny size, display "Maximum disappointment achieved", provide restore button.
+- Close: "Closing is a premium feature" (keep window open).
+
+## 4. Website Lifetime Calculator — 250 Years
+Title: "YOUR WEBSITE LIFE EXPECTANCY 🤡"
+Large animated number: 250 YEARS
+Subtitle: "Estimated lifetime on this website."
+Additional text: "Even though you have done absolutely nothing here."
+Report:
+- Time spent doing nothing: 250 years
+- Productivity: 0.0001%
+- Login attempts: 3
+- Your future plans: Cancelled
+- Website commitment: Forever
+
+## 5. Lifetime Section — Close Website Prank
+Button: CLOSE THIS WEBSITE
+Confirmation popup:
+"OK, WE ARE GOING TO THE SOUTH SIDE! 🚶"
+"You are not delivering us anywhere. You've been doing nothing on this website for 250 years!"
+"Please reconsider your decision to leave. Your lifetime subscription has just begun."
+Buttons:
+- FINE, I'LL STAY 😭: Closes popup, shows "Another 250 years added to your account."
+- I'M LEAVING ANYWAY: Shows "You escaped! Your 250-year sentence has been cancelled", provides working Restart button.
+</div>
+
+<hr/>
+
+<h2>3. Prompt 2 — The Opposite Function & Screen Inverter Prompt</h2>
+<p>Below is the modification prompt refining the popup interactions, reversing the button functionality, adding the Rage Vehicle concept, and introducing the half-screen graduating statements with the reality inverter:</p>
+
+<div class="prompt-box">
+im I'm not satisfied this website at all I thought it should be In this website when we logged in it will be showing skip the proper etcetera close it keep it the proper so this keep the proper option removing and only keep the corruption keep the proper and close the property but the function is like if we click on the pop up then it closes the pop up if we click on the close the pop up then it will keep that pop make opposite function then after that when we log in with some Again which is rage vehicle to new users and add some graduating statements which will with some inverters which will show at half this in the whole website and make it simple different
+ and make it simple different
+</div>
+
+<div class="callout">
+  <strong>Decoded Key Requirements:</strong>
+  <ul>
+    <li><strong>Remove Skip Button:</strong> Eliminate the skip button entirely from the popup sequence.</li>
+    <li><strong>Opposite Logic:</strong>
+      <ul>
+        <li>Clicking <code>KEEP POPUP 😊</code> (or clicking the popup card) &rarr; <strong>Actually CLOSES the popup and advances</strong>.</li>
+        <li>Clicking <code>CLOSE POPUP ❌</code> &rarr; <strong>Refuses to close, shakes furiously, and KEEPS IT</strong>.</li>
+      </ul>
+    </li>
+    <li><strong>Rage Vehicle Theme:</strong> Transform login attempts into 3 laps of a vehicle driver's test where the engine reaches 99 MPH and stalls for 4 seconds.</li>
+    <li><strong>Graduating Statements & Screen Inverter:</strong> Half-screen top banner showing normal statements vs inverted realities, accompanied by an interactive screen inverter toggle that flips the entire website's visual color spectrum.</li>
+  </ul>
+</div>
+
+<hr/>
+
+<h2>4. Prompt 3 — Boss Surveillance Alert & Reverse Escape Prompt</h2>
+<p>Below is the modification prompt regarding the workplace boss detection and the reverse exit mechanism:</p>
+
+<div class="prompt-box">
+When they'll ask when you click on the close this website then there are two option menu click on click close on the website it should not be sure it should you want to give us from a maybe your boss at this section with some ....ing but I will grab you again at this
+ your boss at this section with some funny emoji and if we click on leave OK keep it me on this website then it will leave this website and saying you are leaving but I will grab you again at this your boss at this section with some funny emoji and if we click on leave OK keep it me on this website then it will leave this website and saying you are leaving but I will grab you again at this modificationadd ths on wbsiteei
+</div>
+
+<div class="callout">
+  <strong>Decoded Key Requirements:</strong>
+  <ul>
+    <li><strong>Boss Surveillance Theme:</strong> When clicking "CLOSE THIS WEBSITE", trigger a Code Red Boss Alert: <em>"WAIT! IS YOUR BOSS BEHIND YOU?! 👔👀"</em>.</li>
+    <li><strong>Reverse Exit Buttons:</strong>
+      <ul>
+        <li><code>OK, KEEP ME ON THIS WEBSITE 😭</code>: Clicking to stay actually <strong>leaves the website</strong> and launches the escape screen!</li>
+        <li><code>I'M LEAVING ANYWAY 🏃‍♂️</code>: Clicking to leave is <strong>DENIED</strong> by your manager, adds +250 years of mandatory overtime, and keeps you trapped!</li>
+      </ul>
+    </li>
+    <li><strong>"I Will Grab You Again" Farewell:</strong> The escape screen explicitly warns:
+      <br/><em>"YOU ARE LEAVING... BUT I WILL GRAB YOU AGAIN! 🪝😈👔"</em>
+      <br/>With a working restart button to experience the trap again.</li>
+  </ul>
+</div>
+
+<hr/>
+
+<h2>5. Technical Architecture Summary</h2>
+
+<h3>5.1 State Machine Representation</h3>
+<pre style="background:#1e293b; color:#f8fafc; padding:12pt; border-radius:6pt; font-family:'Consolas', monospace;">
+const state = {
+  loginAttempts: 0,       // 0 to 3 mandatory attempts
+  maxLoginAttempts: 3,
+  username: "SpeedRacer",
+  isLoggingIn: false,
+  popupIndex: 1,          // 1 to 55 counter
+  maxPopups: 55,
+  soundMuted: false,      // Audio toggle
+  lifetimeYears: 250,     // Increments by +250 upon overtime
+  isPopupActive: false,
+  isInvertedMode: false,  // Inverter filter flag
+  gradIndex: 0
+};
+</pre>
+
+<h3>5.2 Audio Synthesis (No External Dependencies)</h3>
+<p>All sound effects (dual-tone ting-ting chimes, error buzzers, inverter sweeps, and fanfares) are synthesized programmatically using the browser's built-in <strong>Web Audio API</strong> (<code>AudioContext</code>), ensuring zero 404 network errors or missing asset files.</p>
+
+<hr/>
+
+<h2>6. Local Execution Guide</h2>
+<p>To run the website locally on any Windows, macOS, or Linux machine:</p>
+<ol>
+  <li>Navigate to the project directory: <code>C:\Users\ADMIN\.gemini\antigravity\scratch\ragebaiting\</code></li>
+  <li>Double-click <strong><code>index.html</code></strong> to open it directly in Chrome, Edge, Firefox, or Safari.</li>
+  <li>Or execute in PowerShell:
+    <br/><code>Start-Process "C:\Users\ADMIN\.gemini\antigravity\scratch\ragebaiting\index.html"</code>
+  </li>
+</ol>
+
+<hr/>
+<p style="text-align:center; color:#64748b; font-size:9pt; margin-top:30pt;">
+  RageBaiting Specification Document &bull; Generated Locally &bull; Ready for Download and Archival
+</p>
+
+</body>
+</html>
